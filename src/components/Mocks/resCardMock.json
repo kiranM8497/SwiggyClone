@@ -1,0 +1,54 @@
+{
+  "info": {
+    "id": "253768",
+    "name": "McDonald's",
+    "cloudinaryImageId": "535fc9f9c135f7982317bbb6a64a1ffc",
+    "locality": "Karanpur",
+    "areaName": "Karanpur",
+    "costForTwo": "₹400 for two",
+    "cuisines": ["American"],
+    "avgRating": 4.5,
+    "parentId": "630",
+    "avgRatingString": "4.5",
+    "totalRatingsString": "10K+",
+    "sla": {
+      "deliveryTime": 28,
+      "lastMileTravel": 2.6,
+      "serviceability": "SERVICEABLE",
+      "slaString": "25-30 mins",
+      "lastMileTravelString": "2.6 km",
+      "iconType": "ICON_TYPE_EMPTY"
+    },
+    "availability": {
+      "nextCloseTime": "2024-03-04 23:45:00",
+      "opened": true
+    },
+    "badges": {},
+    "isOpen": true,
+    "aggregatedDiscountInfoV2": {},
+    "type": "F",
+    "badgesV2": {
+      "entityBadges": {
+        "imageBased": {},
+        "textBased": {},
+        "textExtendedBadges": {}
+      }
+    },
+    "differentiatedUi": {
+      "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+      "differentiatedUiMediaDetails": {
+        "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+        "lottie": {},
+        "video": {}
+      }
+    },
+    "reviewsSummary": {},
+    "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+    "restaurantOfferPresentationInfo": {}
+  },
+  "analytics": {},
+  "cta": {
+    "link": "https://www.swiggy.com/restaurants/mcdonalds-karanpur-dehradun-253768",
+    "type": "WEBLINK"
+  }
+}
