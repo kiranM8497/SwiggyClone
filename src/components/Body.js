@@ -22,8 +22,10 @@ const Body = () => {
 
   const fetchData = async () => {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.3164945&lng=78.03219179999999&is-seo-homepage-enabled=true"
-      //  "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      //  "https://swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      //"https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.3164945&lng=78.03219179999999&is-seo-homepage-enabled=true"
+      //"https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.1458004&lng=79.0881546&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
 
     const json = await data.json();
@@ -45,9 +47,13 @@ const Body = () => {
 
     //call the checkJsonData() function which return Swiggy Restaurant data
     const restaurantData = await checkJsonData(json);
+    // const restaurantData =
+    //   json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+    //     ?.restaurants;
+    console.log(restaurantData);
     setListOfRestraurants(restaurantData);
     setFilteredRestaurants(restaurantData);
-    //console.log(restaurantData);
+
     // me trying fixing change in api issue after akashay update for how to update if url cahnges
     // setListOfRestraurants(
     //   json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
