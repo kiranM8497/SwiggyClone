@@ -1,7 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import CartItem from "./CartItem";
-import CartSection from "./cartSection";
 import EmptyCart from "./EmptyCart";
 import Bill from "./Bill";
 import { clearCart } from "../utils/cartSlice";
