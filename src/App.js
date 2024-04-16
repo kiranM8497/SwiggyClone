@@ -23,15 +23,7 @@ import SignIn from "./components/SignIn.js";
 
 <Body />;
 
-{
-  /* if we have path as /about */
-}
-
 <About />;
-
-{
-  /* if we have path as /contact */
-}
 
 const Grocery = lazy(() => import("./components/Grocery"));
 
