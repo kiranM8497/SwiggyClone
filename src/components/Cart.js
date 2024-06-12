@@ -4,6 +4,8 @@ import CartItem from "./CartItem";
 import EmptyCart from "./EmptyCart";
 import Bill from "./Bill";
 import { clearCart } from "../utils/cartSlice";
+import CartSection from "./CartSection";
+
 const Cart = () => {
   const cartItems = useSelector((store) => store.cart.items);
 

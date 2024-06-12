@@ -15,9 +15,10 @@ import { addItem } from "../utils/cartSlice";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
-
+  const encodedApiUrl = encodeURIComponent(MENU_URL);
+  const workerUrl = `https://still-art-8509.kiranmuttanwar18.workers.dev/?apiUrl=${encodedApiUrl}`;
   const [resInfo, menuItems] = useRestaurantMenu(
-    MENU_URL,
+    workerUrl,
     resId,
     RESTAURANT_TYPE_KEY,
     MENU_ITEM_TYPE_KEY

@@ -19,37 +19,48 @@ const Body = () => {
   useEffect(() => {
     fetchData();
   }, []);
+  // const encodedApiUrl = encodeURIComponent(
+  //   "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.1458004&lng=79.0881546&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+  // );
 
+  // const workerUrl = `https://still-art-8509.kiranmuttanwar18.workers.dev/=${encodedApiUrl}`;
+  const encodedApiUrl = encodeURIComponent(
+    "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.1458004&lng=79.0881546&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+  );
+  const workerUrl = `https://still-art-8509.kiranmuttanwar18.workers.dev/?apiUrl=${encodedApiUrl}`;
   const fetchData = async () => {
     const data = await fetch(
+      workerUrl
+      // "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.1458004&lng=79.0881546&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
       //  "https://swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
       //"https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.3164945&lng=78.03219179999999&is-seo-homepage-enabled=true"
       //"https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.1458004&lng=79.0881546&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      // "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.1458004&lng=79.0881546&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
 
     const json = await data.json();
+    console.log(json);
 
     // was showing an error of data fatching because sometime data coming from cards[1] sometime cards[2] and different on other times so me make a function and check which value of i gives data in cards[i]
-    async function checkJsonData(jsonData) {
-      for (let i = 0; i < jsonData?.data?.cards.length; i++) {
-        // initialize checkData for Swiggy Restaurant data
-        let checkData =
-          json?.data?.cards[i]?.card?.card?.gridElements?.infoWithStyle
-            ?.restaurants;
+    // async function checkJsonData(jsonData) {
+    //   for (let i = 0; i < jsonData?.data?.cards.length; i++) {
+    //     // initialize checkData for Swiggy Restaurant data
+    //     let checkData =
+    //       json?.data?.cards[i]?.card?.card?.gridElements?.infoWithStyle
+    //         ?.restaurants;
 
-        // if checkData is not undefined then return it
-        if (checkData !== undefined) {
-          return checkData;
-        }
-      }
-    }
+    //     // if checkData is not undefined then return it
+    //     if (checkData !== undefined) {
+    //       return checkData;
+    //     }
+    //   }
+    // }
 
     //call the checkJsonData() function which return Swiggy Restaurant data
-    const restaurantData = await checkJsonData(json);
-    // const restaurantData =
-    //   json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
-    //     ?.restaurants;
+    // const restaurantData = await checkJsonData(json);
+    const restaurantData =
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants;
     console.log(restaurantData);
     setListOfRestraurants(restaurantData);
     setFilteredRestaurants(restaurantData);
